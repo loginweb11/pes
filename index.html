@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="master.css">
+    <title>المسابقة</title>
+    <meta charset="UTF-8">
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Blaka&family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap');
+
+    :root {
+      --bg-color: #121212;
+      --card-bg: #1e1e1e;
+      --text-color: #e0e0e0;
+      --accent-color: rgba(87 201 201);
+      --border-color: #2c2c2c;
+    }body {
+  font-family: 'Cairo', sans-serif;
+  background: var(--bg-color);
+  margin: 0;
+  padding: 20px;
+  direction: rtl;
+  color: var(--text-color);
+  font-weight: 800;
+}
+
+h1, h2 {
+  text-align: center;
+  color: var(--accent-color);
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 10px 23px;
+  cursor: pointer;
+  background: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.tab-btn.active {
+  background: var(--accent-color);
+  color: #000;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.group-card {
+  background: var(--card-bg);
+  padding: 15px;
+  padding-top: 1px;
+  margin: 15px auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  max-width: 600px;
+}
+
+.points-table {
+  margin-top: 10px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.points-table th, .points-table td {
+  border: 1px solid var(--border-color);
+  padding: 8px;
+  text-align: center;
+}
+
+.points-table th {
+  background: #2a2a2a;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.match-group-title {
+  margin-top: 30px;
+  font-size: 1.2rem;
+  color: var(--accent-color);
+  text-align: center;
+}
+
+.match-card-modern {
+  border: 1px solid rgba(60 60 60);
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  padding: 0px 16px;
+  height: 60px;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 400px;
+  color: #fff;
+  font-family: 'Tajawal', sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+}
+
+.team {
+  font-weight: bold;
+  flex: 1;
+  text-align: center;
+}
+
+.match-status {
+  font-size: 14px;
+  color: #ccc;
+  white-space: nowrap;
+  margin-right: 10px;
+}
+
+.prize-section {
+  max-width: 600px;
+  margin: 20px auto;
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+.prize-section h3 {
+  color: var(--accent-color);
+  text-align: center;
+  margin-bottom: 15px;
+}
+.prize-section p {
+  font-size: 1.1rem;
+  text-align: center;
+}
+.prize-images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+.prize-images img {
+  max-width: 90%;
+  border: 1px solid white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+*{
+   font-family: 'Cairo', sans-serif;
+   font-weight:800;
+}
+  </style>
+</head>
+<body>
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('groups')">المجموعات</button>
+    <button class="tab-btn" onclick="switchTab('matches')">المباريات</button>
+    <button class="tab-btn" onclick="switchTab('prize')">الجائزة</button>
+  </div>  <div id="groups" class="tab-content active">
+    <div class="group-card">
+      <h2>المجموعة A</h2>
+      <table class="points-table">
+        <thead><tr><th>الفريق</th><th>لعب</th><th>نقاط</th></tr></thead>
+        <tbody><tr><td>حازم</td><td>0</td><td>0</td></tr><tr><td>شعبان</td><td>0</td><td>0</td></tr><tr><td>زين</td><td>0</td><td>0</td></tr></tbody>
+      </table>
+    </div>
+    <div class="group-card">
+      <h2>المجموعة B</h2>
+      <table class="points-table">
+        <thead><tr><th>الفريق</th><th>لعب</th><th>نقاط</th></tr></thead>
+        <tbody><tr><td>عيطة</td><td>0</td><td>0</td></tr><tr><td>شريف</td><td>0</td><td>0</td></tr><tr><td>موسى</td><td>0</td><td>0</td></tr></tbody>
+      </table>
+    </div>
+    <div class="group-card">
+      <h2>المجموعة C</h2>
+      <table class="points-table">
+        <thead><tr><th>الفريق</th><th>لعب</th><th>نقاط</th></tr></thead>
+        <tbody><tr><td>عمرو</td><td>0</td><td>0</td></tr><tr><td>كيلاني</td><td>0</td><td>0</td></tr><tr><td>علي</td><td>0</td><td>0</td></tr></tbody>
+      </table>
+    </div>
+    <div class="group-card">
+      <h2>المجموعة D</h2>
+      <table class="points-table">
+        <thead><tr><th>الفريق</th><th>لعب</th><th>نقاط</th></tr></thead>
+        <tbody><tr><td>البرعي</td><td>0</td><td>0</td></tr><tr><td>سمير</td><td>0</td><td>0</td></tr><tr><td>مصعب</td><td>0</td><td>0</td></tr></tbody>
+      </table>
+    </div>
+  </div>  <div id="matches" class="tab-content">
+    <div class="match-group-title">المجموعة A</div>
+    <div class="match-card-modern">
+      <div class="team">حازم</div>
+      <div class="match-status">لم يبدأ بعد</div>
+      <div class="team">شعبان</div>
+    </div>
+    <div class="match-card-modern">
+      <div class="team">زين</div>
+      <div class="match-status">لم يبدأ بعد</div>
+      <div class="team">حازم</div>
+    </div>
+    <div class="match-card-modern">
+      <div class="team">شعبان</div>
+      <div class="match-status">لم يبدأ بعد</div>
+      <div class="team">زين</div>
+    </div><div class="match-group-title">المجموعة B</div>
+<div class="match-card-modern">
+  <div class="team">عيطة</div>
+  <div class="match-status">لم يبدأ بعد</div>
+  <div class="team">موسى</div>
+</div>
+<div class="match-card-modern">
+  <div class="team">شريف</div>
+  <div class="match-status">لم يبدأ بعد</div>
+  <div class="team">عيطة</div>
+</div>
+<div class="match-card-modern">
+  <div class="team">موسى</div>
+  <div class="match-status">لم يبدأ بعد</div>
+  <div class="team">شريف</div>
+</div>
+
+<div class="match-group-title">المجموعة C</div>
+<div class="match-card-modern">
+  <div class="team">عمرو</div>
+  <div class="match-status">لم يبدأ بعد</div>
+  <div class="team">كيلاني</div>
+</div>
+<div class="match-card-modern">
+  <div class="team">علي</div>
+  <div class="match-status">لم يبدأ بعد</div>
+  <div class="team">عمرو</div>
+</div>
+<div class="match-card-modern">
+  <div class="team">كيلاني</div>
+  <div class="match-status">لم يبدأ بعد</div>
+  <div class="team">علي</div>
+</div>
+
+<div class="match-group-title">المجموعة D</div>
+<div class="match-card-modern">
+  <div class="team">البرعي</div>
+  <div class="match-status">لم يبدأ بعد</div>
+  <div class="team">سمير</div>
+</div>
+<div class="match-card-modern">
+  <div class="team">مصعب</div>
+  <div class="match-status">لم يبدأ بعد</div>
+  <div class="team">البرعي</div>
+</div>
+<div class="match-card-modern">
+  <div class="team">سمير</div>
+  <div class="match-status">لم يبدأ بعد</div>
+  <div class="team">مصعب</div>
+</div>
+  </div>  
+  <div id="prize" class="tab-content">
+    <div class="prize-section">
+      <h3>الجائزة</h3>
+      <p>الفائز في البطولة سيحصل على <strong>حساب مدفوع في لعبة eFootball</strong> يحتوي على لاعبين مميزين ومفاجآت رائعة!</p>
+      <div class="prize-images">
+        <img src="G1.jpg" alt="جائزة eFootball 2">
+      </div>
+    </div>
+  </div>  
+  <div class="footer">
+    &copy; 2025 جميع الحقوق محفوظة - بطولة بيس
+  </div>  
+  <script>
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      document.querySelector(`.tab-btn[onclick*="${tabId}"]`).classList.add('active');
+    }
+  </script>
+  </body>
+</html>
